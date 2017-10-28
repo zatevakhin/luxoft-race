@@ -1,5 +1,5 @@
-#ifndef LUXSOFTTASK_SIZE_H
-#define LUXSOFTTASK_SIZE_H
+#ifndef LUXOFT_RACE_SIZE_H
+#define LUXOFT_RACE_SIZE_H
 
 #include <iostream>
 
@@ -13,4 +13,4 @@ class Size
     Size(int w, int h);
 };
 
-#endif //LUXSOFTTASK_SIZE_H
+#endif //LUXOFT_RACE_SIZE_H

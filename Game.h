@@ -1,6 +1,6 @@
 
-#ifndef LUXSOFTTASK_GAME_H
-#define LUXSOFTTASK_GAME_H
+#ifndef LUXOFT_RACE_GAME_H
+#define LUXOFT_RACE_GAME_H
 
 #include <thread>
 #include <random>
@@ -54,4 +54,4 @@ class Game
     void onKeyEnter();
 };
 
-#endif //LUXSOFTTASK_GAME_H
+#endif //LUXOFT_RACE_GAME_H

@@ -1,6 +1,6 @@
 
-#ifndef LUXSOFTTASK_PLAYER_H
-#define LUXSOFTTASK_PLAYER_H
+#ifndef LUXOFT_RACE_PLAYER_H
+#define LUXOFT_RACE_PLAYER_H
 
 #include <iostream>
 
@@ -25,4 +25,4 @@ class Player
 
 };
 
-#endif //LUXSOFTTASK_PLAYER_H
+#endif //LUXOFT_RACE_PLAYER_H

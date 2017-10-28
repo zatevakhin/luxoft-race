@@ -1,6 +1,6 @@
 
-#ifndef LUXSOFTTASK_UTILS_H
-#define LUXSOFTTASK_UTILS_H
+#ifndef LUXOFT_RACE_UTILS_H
+#define LUXOFT_RACE_UTILS_H
 
 
 #include <windows.h>
@@ -19,4 +19,4 @@ int rand(int min, int max);
 
 }
 
-#endif //LUXSOFTTASK_UTILS_H
+#endif //LUXOFT_RACE_UTILS_H

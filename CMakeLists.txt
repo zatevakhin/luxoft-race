@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 set(CMAKE_CXX_STANDARD 11)
 
-project(luxsoftwin)
+project(luxoft-race)
 
 FILE(GLOB HEADER_FILES RELATIVE
     "${CMAKE_CURRENT_SOURCE_DIR}"
@@ -16,4 +16,4 @@ FILE(GLOB SOURCE_FILES RELATIVE
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
-target_link_libraries(luxsoftwin "-static")
+target_link_libraries(${PROJECT_NAME} "-static")

@@ -1,6 +1,6 @@
 
-#ifndef LUXSOFTTASK_ROAD_H
-#define LUXSOFTTASK_ROAD_H
+#ifndef LUXOFT_RACE_ROAD_H
+#define LUXOFT_RACE_ROAD_H
 
 
 #include <vector>
@@ -27,4 +27,4 @@ class Road
     void genNewSection();
 };
 
-#endif //LUXSOFTTASK_ROAD_H
+#endif //LUXOFT_RACE_ROAD_H
