@@ -7,12 +7,12 @@ Game::Game()
   std::srand(unsigned(std::time(nullptr)));
 
   Size console_size = utils::getConsoleSize();
-  console_size.width = 20; // console_size.width - 4;
+  console_size.width = ROAD_WIDTH; // console_size.width - 4;
 
   player_ = new Player('@', console_size);
   road_ = new Road(console_size, '*');
 
-  frameTime_ = 200;
+  frameTime_ = FRAMETIME_DEFAULT;
 }
 
 
@@ -29,7 +29,7 @@ Game::~Game()
 void Game::onKeyUp()
 {
   if (!isPaused_)
-    frameTime_ -= (frameTime_ <= 10) ? 0 : 5;
+    frameTime_ -= (frameTime_ <= FRAMETIME_MIN) ? 0 : FRAMETIME_STEP;
 }
 
 
@@ -37,7 +37,7 @@ void Game::onKeyUp()
 void Game::onKeyDown()
 {
   if (!isPaused_)
-    frameTime_ += (frameTime_ >= 1000) ? 0 : 5;
+    frameTime_ += (frameTime_ >= FRAMETIME_MAX) ? 0 : FRAMETIME_STEP;
 }
 
 

@@ -15,6 +15,14 @@
 #include "Road.h"
 
 
+#define FRAMETIME_DEFAULT 200
+#define FRAMETIME_MAX     1000
+#define FRAMETIME_MIN     10
+#define FRAMETIME_STEP    5
+
+#define ROAD_WIDTH 20
+
+
 class Game
 {
   public:
