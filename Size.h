@@ -10,7 +10,7 @@ class Size
     std::size_t width;
     std::size_t height;
 
-    Size(int w, int h);
+    Size(std::size_t w, std::size_t h);
 };
 
 #endif //LUXOFT_RACE_SIZE_H

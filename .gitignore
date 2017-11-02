@@ -1,2 +1,3 @@
-.idea
 *.mdj
+.idea
+cmake-build-debug

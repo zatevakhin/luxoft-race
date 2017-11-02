@@ -1,13 +1,12 @@
 
-#include "game.h"
+#include "Game.h"
 
 
 Game::Game()
 {
   std::srand(unsigned(std::time(nullptr)));
-  consoleHandle_ = GetStdHandle(STD_OUTPUT_HANDLE);
 
-  Size console_size = utils::getConsoleSize(consoleHandle_);
+  Size console_size = utils::getConsoleSize();
   console_size.width = 20; // console_size.width - 4;
 
   player_ = new Player('@', console_size);
@@ -63,7 +62,8 @@ void Game::onKeyEnter() {
 void Game::eventLoop()
 {
   while (isRunning_) {
-    switch(getch()) {
+    int c = utils::getInputChar();
+    switch(c) {
       case KEY_ESCAPE : onKeyEscape(); break;
       case KEY_ENTER  : onKeyEnter();  break;
       case KEY_UP     : onKeyUp();     break;
@@ -75,6 +75,7 @@ void Game::eventLoop()
         break;
       case KEY_RIGHT :
         if (!isPaused_) {
+
           player_->onKeyRight();
         }
         break;
@@ -105,12 +106,12 @@ void Game::draw()
       pauseCondition_.wait(lock);
     }
 
-    utils::consoleClear(consoleHandle_);
+    utils::consoleClear();
 
     road_->draw(player_);
 
     if (road_->isCollided(player_)) {
-      std::cout << "GAME OVER!" << std::endl;
+      std::cout << "It`s end of game, press any key to exit." << std::endl;
       isRunning_ = false;
     }
 

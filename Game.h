@@ -6,20 +6,13 @@
 #include <random>
 #include <vector>
 #include <chrono>
-#include <conio.h>
+
 #include <iostream>
 #include <condition_variable>
 
+#include "Keycodes.h"
 #include "Player.h"
 #include "Road.h"
-
-
-#define KEY_UP     72
-#define KEY_DOWN   80
-#define KEY_LEFT   75
-#define KEY_RIGHT  77
-#define KEY_ESCAPE 27
-#define KEY_ENTER  13
 
 
 class Game
@@ -31,9 +24,6 @@ class Game
 
   private:
     std::size_t frameTime_;
-
-    HANDLE consoleHandle_;
-
     Player* player_;
     Road* road_;
 

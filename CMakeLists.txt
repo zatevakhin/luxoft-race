@@ -16,4 +16,8 @@ FILE(GLOB SOURCE_FILES RELATIVE
 
 add_executable(${PROJECT_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 
-target_link_libraries(${PROJECT_NAME} "-static")
+if (WIN32 AND NOT APPLE)
+  target_link_libraries(${PROJECT_NAME} -static)
+elseif(UNIX AND NOT APPLE)
+  target_link_libraries(${PROJECT_NAME} pthread)
+endif ()

@@ -2,17 +2,25 @@
 #ifndef LUXOFT_RACE_UTILS_H
 #define LUXOFT_RACE_UTILS_H
 
-
-#include <windows.h>
+#ifdef __linux__
+  #include <sys/ioctl.h>
+  #include <termios.h>
+  #include <unistd.h>
+  #include <cstring>
+#elif _WIN32
+  #include <windows.h>
+  #include <conio.h>
+#endif
 
 #include "Size.h"
+#include "Keycodes.h"
 
 
 namespace utils {
 
-
-void consoleClear(HANDLE consoleHandle);
-Size getConsoleSize(HANDLE consoleHandle);
+void consoleClear();
+Size getConsoleSize();
+int getInputChar();
 
 int rand(int min, int max);
 

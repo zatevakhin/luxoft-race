@@ -15,7 +15,7 @@ Road::Road(Size size, char garbage)
 void Road::genNewSection()
 {
   std::string section = std::string(size_.width, ' ');
-  section[utils::rand(0, size_.width)] = garbage_;
+  section[utils::rand(0, static_cast<int>(size_.width))] = garbage_;
   sections_.emplace(sections_.begin(), section);
 }
 
