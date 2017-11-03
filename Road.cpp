@@ -21,7 +21,7 @@ void Road::genNewSection()
 
 
 
-void Road::draw(Player* player)
+void Road::draw(PlayerPtr player)
 {
   genNewSection();
   sections_.pop_back();
@@ -38,7 +38,7 @@ void Road::draw(Player* player)
 
 
 
-bool Road::isCollided(Player* player)
+bool Road::isCollided(PlayerPtr player)
 {
   return sections_[size_.height - 2][player->getIndex()] == garbage_;
 }

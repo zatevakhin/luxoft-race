@@ -9,8 +9,8 @@ Game::Game()
   Size console_size = utils::getConsoleSize();
   console_size.width = ROAD_WIDTH; // console_size.width - 4;
 
-  player_ = new Player('@', console_size);
-  road_ = new Road(console_size, '*');
+  player_ = std::make_shared<Player>('@', console_size);
+  road_ = std::make_shared<Road>(console_size, '*');
 
   frameTime_ = FRAMETIME_DEFAULT;
 }
@@ -20,8 +20,8 @@ Game::Game()
 Game::~Game()
 {
   drawThread_.join();
-  delete player_;
-  delete road_;
+//  delete player_;
+//  delete road_;
 }
 
 

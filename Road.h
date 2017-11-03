@@ -4,9 +4,15 @@
 
 
 #include <vector>
+#include <memory>
 
 #include "utils.h"
 #include "Player.h"
+
+class Road;
+
+
+using RoadPtr = std::shared_ptr<Road>;
 
 
 class Road
@@ -15,8 +21,8 @@ class Road
     Road(Size size, char garbage);
     ~Road() = default;
 
-    void draw(Player* player);
-    bool isCollided(Player* player);
+  void draw(PlayerPtr player);
+    bool isCollided(PlayerPtr player);
 
   private:
     char garbage_;

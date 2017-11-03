@@ -32,8 +32,9 @@ class Game
 
   private:
     std::size_t frameTime_;
-    Player* player_;
-    Road* road_;
+
+    PlayerPtr player_;
+    RoadPtr road_;
 
     bool isRunning_;
     bool isPaused_;

@@ -3,8 +3,15 @@
 #define LUXOFT_RACE_PLAYER_H
 
 #include <iostream>
+#include <memory>
 
 #include "Size.h"
+
+
+class Player;
+
+
+using PlayerPtr = std::shared_ptr<Player>;
 
 
 class Player
