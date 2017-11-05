@@ -4,12 +4,12 @@
 
 Game::Game()
 {
-  std::srand(unsigned(std::time(nullptr)));
+  std::srand(static_cast<unsigned>(std::time(nullptr)));
 
   Size console_size = utils::getConsoleSize();
-  console_size.width = ROAD_WIDTH; // console_size.width - 4;
+  console_size.width = ROAD_WIDTH;
 
-  player_ = std::make_shared<Player>('@', console_size);
+  player_ = std::make_shared<Player>(console_size, '@');
   road_ = std::make_shared<Road>(console_size, '*');
 
   frameTime_ = FRAMETIME_DEFAULT;
@@ -20,8 +20,6 @@ Game::Game()
 Game::~Game()
 {
   drawThread_.join();
-//  delete player_;
-//  delete road_;
 }
 
 

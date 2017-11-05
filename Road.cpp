@@ -27,7 +27,7 @@ void Road::draw(PlayerPtr player)
   sections_.pop_back();
 
   std::string backup = sections_[size_.height - 2];
-   sections_[size_.height - 2][player->getIndex()] = '@';
+  sections_[size_.height - 2][player->getIndex()] = '@';
 
   for (auto const& i : sections_) {
     std::cout << "'|" << i << "|'" << std::endl;

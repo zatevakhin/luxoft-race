@@ -17,7 +17,7 @@ using PlayerPtr = std::shared_ptr<Player>;
 class Player
 {
   public:
-    Player(char symbol, Size roadSize);
+    Player(Size roadSize, char symbol);
     ~Player() = default;
 
     void onKeyLeft();

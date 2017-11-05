@@ -2,7 +2,7 @@
 #include "Player.h"
 
 
-Player::Player(char symbol, Size roadSize)
+Player::Player(Size roadSize, char symbol)
   : symbol_(symbol), roadSize_(roadSize)
 {
   index_ = roadSize_.width / 2;

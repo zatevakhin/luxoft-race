@@ -4,13 +4,12 @@
 #include <iostream>
 
 
-class Size
+struct Size
 {
-  public:
-    std::size_t width;
-    std::size_t height;
+  std::size_t width;
+  std::size_t height;
 
-    Size(std::size_t w, std::size_t h);
+  Size(std::size_t w, std::size_t h);
 };
 
 #endif //LUXOFT_RACE_SIZE_H
