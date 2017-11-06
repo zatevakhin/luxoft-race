@@ -29,8 +29,8 @@ class CRoad
     char item_;
     SSize size_;
     std::vector<std::string> sections_;
-    std::shared_ptr<ICollision> garbageCollision;
-    std::shared_ptr<ICollision> itemCollision;
+    std::shared_ptr<ICollision> garbageCollision_;
+    std::shared_ptr<ICollision> itemCollision_;
 
 
     void genNewSection();

@@ -98,7 +98,10 @@ void CGame::draw()
   std::unique_lock<std::mutex> lock(pauseMutex_);
   auto started_at = std::chrono::system_clock::now();
 
+  std::size_t speed = 0;
   while (isRunning_) {
+
+    speed = (FRAMETIME_MAX / frameTime_) * SPEED_MULTIPLIER;
 
     if (isPaused_) {
       std::cout << "PAUSED!" << std::endl;
@@ -111,7 +114,8 @@ void CGame::draw()
         std::chrono::system_clock::now() - started_at
     );
 
-    road_->draw(player_, passed.count(), (FRAMETIME_MAX / frameTime_) * 10);
+
+    road_->draw(player_, passed.count(), speed);
 
     if (road_->isCollided(player_)) {
       std::cout << "It`s end of game, press any key to exit." << std::endl;

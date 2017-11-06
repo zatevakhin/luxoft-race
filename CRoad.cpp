@@ -9,8 +9,8 @@ CRoad::CRoad(SSize size, char garbage, char item)
     sections_.emplace(sections_.begin() + i, std::string(size_.width, ' '));
   }
 
-  garbageCollision = std::make_shared<CCollisionGarbage>(size_, garbage_);
-  itemCollision = std::make_shared<CCollisionItem>(size_, item_);
+  garbageCollision_ = std::make_shared<CCollisionGarbage>(size_, garbage_);
+  itemCollision_ = std::make_shared<CCollisionItem>(size_, item_);
 }
 
 
@@ -78,10 +78,10 @@ bool CRoad::isCollided(std::shared_ptr<CPlayer> player)
   char playerPositionChar = sections_[size_.height - 2][player->getIndex()];
 
   if (playerPositionChar == garbage_) {
-    return garbageCollision->execute(player, sections_);
+    return garbageCollision_->execute(player, sections_);
 
   } else if (playerPositionChar == item_) {
-    return itemCollision->execute(player, sections_);
+    return itemCollision_->execute(player, sections_);
 
   }
 

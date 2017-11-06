@@ -21,6 +21,7 @@
 #define FRAMETIME_STEP    5
 
 #define ROAD_WIDTH 20
+#define SPEED_MULTIPLIER 10
 
 
 class CGame
