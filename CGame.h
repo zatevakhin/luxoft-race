@@ -1,6 +1,6 @@
 
-#ifndef LUXOFT_RACE_GAME_H
-#define LUXOFT_RACE_GAME_H
+#ifndef LUXOFT_RACE_CGAME_H
+#define LUXOFT_RACE_CGAME_H
 
 #include <thread>
 #include <random>
@@ -11,8 +11,8 @@
 #include <condition_variable>
 
 #include "Keycodes.h"
-#include "Player.h"
-#include "Road.h"
+#include "CPlayer.h"
+#include "CRoad.h"
 
 
 #define FRAMETIME_DEFAULT 200
@@ -23,18 +23,18 @@
 #define ROAD_WIDTH 20
 
 
-class Game
+class CGame
 {
   public:
-    Game();
-    ~Game();
+    CGame();
+    ~CGame();
     void run();
 
   private:
     std::size_t frameTime_;
 
-    PlayerPtr player_;
-    RoadPtr road_;
+    std::shared_ptr<CPlayer> player_;
+    std::shared_ptr<CRoad> road_;
 
     bool isRunning_;
     bool isPaused_;
@@ -53,4 +53,4 @@ class Game
     void onKeyEnter();
 };
 
-#endif //LUXOFT_RACE_GAME_H
+#endif //LUXOFT_RACE_CGAME_H

@@ -42,7 +42,7 @@ void consoleClear()
 
 
 
-Size getConsoleSize()
+SSize getConsoleSize()
 {
   std::size_t width;
   std::size_t height;
@@ -60,7 +60,7 @@ Size getConsoleSize()
   height = static_cast<std::size_t>(csbi.srWindow.Bottom - csbi.srWindow.Top);
 #endif
 
-  return Size(width, height - 1);
+  return SSize(width, height - 1);
 }
 
 

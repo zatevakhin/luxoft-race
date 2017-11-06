@@ -1,8 +1,8 @@
 
-#include "Game.h"
+#include "CGame.h"
 
 int main() {
-  Game race;
+  CGame race;
   race.run();
   return 0;
 }

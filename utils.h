@@ -12,14 +12,14 @@
   #include <conio.h>
 #endif
 
-#include "Size.h"
+#include "SSize.h"
 #include "Keycodes.h"
 
 
 namespace utils {
 
 void consoleClear();
-Size getConsoleSize();
+SSize getConsoleSize();
 int getInputChar();
 
 int rand(int min, int max);
