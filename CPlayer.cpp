@@ -6,6 +6,7 @@ CPlayer::CPlayer(SSize roadSize, char symbol)
   : symbol_(symbol), roadSize_(roadSize)
 {
   index_ = roadSize_.width / 2;
+  passed_ = 0;
   items_ = 0;
 }
 
