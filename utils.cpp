@@ -90,7 +90,7 @@ int getInputChar()
   c = getchar();
 
   // Handling Linux terminal escape siquence
-  if (c == KEY_ESCAPE) {
+  if (c == Keycode::ESCAPE) {
     struct termios original_ts, nowait_ts;
 
     tcgetattr(STDIN_FILENO, &original_ts);
@@ -106,7 +106,7 @@ int getInputChar()
       }
     }
     else {
-      c = KEY_ESCAPE;
+      c = Keycode::ESCAPE;
     }
 
     tcsetattr(STDIN_FILENO, TCSANOW, &original_ts);

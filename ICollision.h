@@ -15,6 +15,7 @@ public:
 
   protected:
     SSize roadSize_{0, 0};
+
     char colliding_{0};
 
 };

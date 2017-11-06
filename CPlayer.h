@@ -9,7 +9,7 @@
 #include "SSize.h"
 
 
-#define SCORE_ITEM_COST 10
+const int SCORE_ITEM_COST = 10;
 
 
 class CPlayer
@@ -20,6 +20,7 @@ class CPlayer
 
     void onKeyLeft();
     void onKeyRight();
+
     void itemsIter();
     void passedIter();
 
@@ -55,7 +56,9 @@ class CPlayer
 
   private:
     char symbol_;
+
     SSize roadSize_;
+
     std::size_t index_;
     std::size_t items_;
     std::size_t passed_;

@@ -62,16 +62,16 @@ void CGame::eventLoop()
   while (isRunning_) {
     int c = utils::getInputChar();
     switch(c) {
-      case KEY_ESCAPE : onKeyEscape(); break;
-      case KEY_ENTER  : onKeyEnter();  break;
-      case KEY_UP     : onKeyUp();     break;
-      case KEY_DOWN   : onKeyDown();   break;
-      case KEY_LEFT :
+      case Keycode::ESCAPE : onKeyEscape(); break;
+      case Keycode::ENTER  : onKeyEnter();  break;
+      case Keycode::UP     : onKeyUp();     break;
+      case Keycode::DOWN   : onKeyDown();   break;
+      case Keycode::LEFT   :
         if (!isPaused_) {
           player_->onKeyLeft();
         }
         break;
-      case KEY_RIGHT :
+      case Keycode::RIGHT  :
         if (!isPaused_) {
 
           player_->onKeyRight();
