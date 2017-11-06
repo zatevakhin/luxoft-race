@@ -1,6 +1,7 @@
 
 #include "CCollisionItem.h"
 
+
 CCollisionItem::CCollisionItem(SSize roadSize, char item)
 {
   roadSize_ = roadSize;
@@ -9,7 +10,8 @@ CCollisionItem::CCollisionItem(SSize roadSize, char item)
 
 
 
-bool CCollisionItem::execute(std::shared_ptr<CPlayer> player, std::vector<std::string>& sections)
+bool CCollisionItem::execute(std::shared_ptr<CPlayer> player,
+                             std::vector<std::string>& sections)
 {
   if (sections[roadSize_.height - 2][player->getIndex()] == colliding_) {
     sections[roadSize_.height - 2][player->getIndex()] = ' ';

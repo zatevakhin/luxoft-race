@@ -4,12 +4,14 @@
 
 #include "ICollision.h"
 
+
 class CCollisionItem : public ICollision {
 
   public:
     CCollisionItem(SSize roadSize, char item);
 
-    bool execute(std::shared_ptr<CPlayer> player, std::vector<std::string>& sections) override;
+    bool execute(std::shared_ptr<CPlayer> player,
+                 std::vector<std::string>& sections) override;
 };
 
 

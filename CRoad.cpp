@@ -9,8 +9,8 @@ CRoad::CRoad(SSize size, char garbage, char item)
     sections_.emplace(sections_.begin() + i, std::string(size_.width, ' '));
   }
 
-  garbageCollision = new CCollisionGarbage(size_, garbage_);
-  itemCollision = new CCollisionItem(size_, item_);
+  garbageCollision = std::make_shared<CCollisionGarbage>(size_, garbage_);
+  itemCollision = std::make_shared<CCollisionItem>(size_, item_);
 }
 
 
@@ -29,7 +29,8 @@ void CRoad::genNewSection()
 
 
 
-void CRoad::draw(std::shared_ptr<CPlayer> player,  std::size_t raceTime, std::size_t speed)
+void CRoad::draw(std::shared_ptr<CPlayer> player,
+                 std::size_t raceTime, std::size_t speed)
 {
   genNewSection();
   sections_.pop_back();

@@ -20,7 +20,8 @@ class CRoad
     CRoad(SSize size, char garbage, char item);
     ~CRoad() = default;
 
-    void draw(std::shared_ptr<CPlayer> player, std::size_t raceTime, std::size_t speed);
+    void draw(std::shared_ptr<CPlayer> player,
+              std::size_t raceTime, std::size_t speed);
     bool isCollided(std::shared_ptr<CPlayer> player);
 
   private:
@@ -28,8 +29,8 @@ class CRoad
     char item_;
     SSize size_;
     std::vector<std::string> sections_;
-    ICollision* garbageCollision;
-    ICollision* itemCollision;
+    std::shared_ptr<ICollision> garbageCollision;
+    std::shared_ptr<ICollision> itemCollision;
 
 
     void genNewSection();
