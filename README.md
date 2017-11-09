@@ -9,4 +9,4 @@ You can drive using:
   - arrow right - to go right;
   - key a - to use autopilot (if you are tired and want to sleep);
   - key enter - to set game to pause;
-  - key enter - to finish the game;
+  - key escape - to finish the game;
