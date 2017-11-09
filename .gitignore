@@ -1,3 +1,4 @@
 *.mdj
+*.xmi
 .idea
 cmake-build-debug

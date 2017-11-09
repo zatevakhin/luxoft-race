@@ -2,8 +2,8 @@
 #include "CPlayer.h"
 
 
-CPlayer::CPlayer(SSize roadSize, char car)
-  : carChar_(car), roadSize_(roadSize)
+CPlayer::CPlayer(SSize roadSize, char carChar)
+  : carChar_(carChar), roadSize_(roadSize)
 {
   autopilotEnabled_ = false;
   index_ = roadSize_.width / 2;

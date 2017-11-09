@@ -15,7 +15,7 @@ const int SCORE_ITEM_COST = 10;
 class CPlayer
 {
   public:
-    CPlayer(SSize roadSize, char symbol);
+    CPlayer(SSize roadSize, char carChar);
     ~CPlayer() = default;
 
     void moveLeft();
