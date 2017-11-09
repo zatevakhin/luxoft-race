@@ -4,6 +4,7 @@
 
 namespace Keycode {
 
+const int A      = 97;
 const int ESCAPE = 27;
 
 #ifdef __linux__

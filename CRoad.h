@@ -22,6 +22,22 @@ class CRoad
 
     bool isCollided(std::shared_ptr<CPlayer> player);
 
+
+
+    inline char getGarbageChar() const
+    {
+      return garbage_;
+    }
+
+
+
+    inline std::vector<std::string> getSections() const
+    {
+      return sections_;
+    }
+
+
+
   private:
     char garbage_;
     char item_;

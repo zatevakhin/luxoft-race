@@ -50,8 +50,11 @@ class CGame
 
     void onKeyUp();
     void onKeyDown();
+    void onKeyRight();
+    void onKeyLeft();
     void onKeyEscape();
     void onKeyEnter();
+    void onKeyA();
 };
 
 #endif //LUXOFT_RACE_CGAME_H

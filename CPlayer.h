@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <memory>
-
+#include <vector>
 
 #include "SSize.h"
 
@@ -18,36 +18,40 @@ class CPlayer
     CPlayer(SSize roadSize, char symbol);
     ~CPlayer() = default;
 
-    void onKeyLeft();
-    void onKeyRight();
+    void moveLeft();
+    void moveRight();
+
+    bool isAutopilotState();
+    void toggleAutopilot();
+    void useAutopilot(const std::vector<std::string>& sections, char garbage);
 
     void itemsIter();
     void passedIter();
 
 
 
-    char getSymbol() const
+    inline char getCarChar () const
     {
-      return symbol_;
+      return carChar_;
     }
 
 
 
-    std::size_t getIndex() const
+    inline std::size_t getIndex() const
     {
       return index_;
     }
 
 
 
-    std::size_t getScore() const
+    inline std::size_t getScore() const
     {
       return items_ * SCORE_ITEM_COST;
     }
 
 
 
-    std::size_t getPassed() const
+    inline std::size_t getPassed() const
     {
       return passed_;
     }
@@ -55,7 +59,9 @@ class CPlayer
 
 
   private:
-    char symbol_;
+    char carChar_;
+
+    bool autopilotEnabled_;
 
     SSize roadSize_;
 

@@ -36,7 +36,9 @@ void CRoad::draw(std::shared_ptr<CPlayer> player,
   sections_.pop_back();
 
   std::string backup = sections_[size_.height - 2];
-  sections_[size_.height - 2][player->getIndex()] = player->getSymbol();
+  sections_[size_.height - 2][player->getIndex()] = player->getCarChar();
+
+  bool state = player->isAutopilotState();
 
   int j = 0;
   for (auto const& i : sections_) {
@@ -45,19 +47,23 @@ void CRoad::draw(std::shared_ptr<CPlayer> player,
 
     switch (j) {
       case 2 :
-        std::cout << " Speed  : " << speed << std::endl;
+        std::cout << " Speed     : " << speed << std::endl;
         break;
 
       case 3 :
-        std::cout << " Time   : " << raceTime << "s" << std::endl;
+        std::cout << " Time      : " << raceTime << "s" << std::endl;
         break;
 
       case 4 :
-        std::cout << " Passed : " << player->getPassed() << std::endl;
+        std::cout << " Passed    : " << player->getPassed() << std::endl;
         break;
 
       case 5 :
-        std::cout << " Score  : " << player->getScore() << std::endl;
+        std::cout << " Score     : " << player->getScore() << std::endl;
+        break;
+
+      case 6 :
+        std::cout << " Autopilot : " << std::boolalpha << state << std::endl;
         break;
 
       default:
